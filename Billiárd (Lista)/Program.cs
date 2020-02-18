@@ -12,11 +12,37 @@ namespace Billiárd__Lista_
         {
             List<int> golyók = new List<int>();
             Kezdés(golyók);
-            for (int i = 0; i < golyók.Count; i++)
+            int leesett = Leesősolsoló(golyók);
+            Kiíró(golyók);
+            do
             {
-                Console.Write(golyók[i]+" ");
-            }
+
+            } while (leesett != 8);
+            
+
+            //for (int i = 0; i < golyók.Count; i++)
+            //{
+            //    Console.Write(golyók[i]+" ");
+            //}
             Console.ReadKey();
+        }
+
+        private static void Kiíró(List<int> golyók)
+        {
+            foreach (int item in golyók)
+            {
+                Console.Write(item+" ");
+            }
+        }
+
+        private static int Leesősolsoló(List<int> golyók)     // Hányadik esett le
+        {
+            int leesett = 0;
+            Random gép = new Random();
+            
+            leesett = gép.Next(golyók.Count);
+            golyók.Remove(leesett);
+            return golyók[leesett];
         }
 
         private static void Kezdés(List<int> golyók)
