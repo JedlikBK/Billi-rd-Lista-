@@ -10,6 +10,21 @@ namespace Billiárd__Lista_
     {
         static void Main(string[] args)
         {
+            List<int> golyók = new List<int>();
+            Kezdés(golyók);
+            for (int i = 0; i < golyók.Count; i++)
+            {
+                Console.Write(golyók[i]+" ");
+            }
+            Console.ReadKey();
+        }
+
+        private static void Kezdés(List<int> golyók)
+        {
+            for (int i = 1; i <= 15; i++)
+            {
+                golyók.Add(i);
+            }
         }
     }
 }
